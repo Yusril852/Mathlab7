@@ -38,7 +38,7 @@ h1,h2,.big,.q,#sb .lg,.lv,.btn{font-family:Fredoka,Nunito,sans-serif}
 .q{font-size:1.4rem}.hero{background:linear-gradient(135deg,#ff7a45,#ffb347);border-radius:30px}.hero::after{content:"🦌";font-size:4rem}
 .bar{height:16px;border-radius:12px}.bar i{background:repeating-linear-gradient(45deg,#2bb673,#2bb673 10px,#4cd698 10px,#4cd698 20px)}
 #sb{background:#ffe08a}#sb button.on{background:var(--b);color:#fff}.ex{background:#fff3c9;border-radius:14px;padding:10px 14px}.tw{overflow-x:auto}
-#cr{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:5px max(16px,calc(50% - 440px));font:600 .74rem Nunito,sans-serif;color:var(--m);background:#fff3c9}#cr a{display:inline-flex;align-items:center;gap:5px;color:inherit;text-decoration:none}#cr a:hover{color:var(--b)}
+
 
 /* tema ceria kelas 7 */
 .card h1{background:linear-gradient(90deg,#ff7a45,#9b5de5,#3b9cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -65,7 +65,7 @@ body::after{bottom:-25vmax;right:-15vmax;background:radial-gradient(circle,#ffd9
 @keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.15)}}
 h1,h2,#sb .lg{font-family:'Playfair Display',Georgia,serif;font-weight:800}
 h2.sem{font-family:Fredoka,Nunito,sans-serif;background:linear-gradient(90deg,#2d1b69,#6a3df0);color:#f6d77a;box-shadow:0 4px 0 #1a1245}
-#cr{background:#120c33;color:#cfc8ee}
+
 #sb{position:sticky;background:linear-gradient(90deg,#1a1245,#2d1b69 60%,#1a1245);border:0;border-image:none;box-shadow:0 8px 26px rgba(26,18,69,.4)}
 #sb::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--gold)}
 #sb .lg{color:#fff}#sb .lg i{background:var(--gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -140,10 +140,10 @@ table tr:first-child td{background:#f6eed6}
 body{background:var(--bg);color:var(--ink)}
 body::before{background:radial-gradient(circle,var(--o1),transparent 65%);opacity:var(--oo)}
 body::after{background:radial-gradient(circle,var(--o2),transparent 65%);opacity:var(--oo)}
-main,#cr{position:relative;z-index:1}
+main{position:relative;z-index:1}
 h1,h2,#sb .lg,.lv{font-family:var(--fh);font-weight:800}
 h2.sem{background:var(--bgr);color:var(--bt);box-shadow:0 4px 0 var(--bsh)}
-#cr{background:var(--sbg);color:var(--sbt)}
+
 #sb{background:var(--sbg);border:0;border-image:none;box-shadow:0 8px 26px rgba(0,0,0,.35)}
 #sb::after{background:var(--sbo)}
 #sb .lg{color:var(--sblg)}#sb .lg i{background:var(--sbo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -192,17 +192,10 @@ table tr:first-child td{background:var(--soft)}
 .thb{all:unset;cursor:pointer;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:1.4rem;background:var(--bgr);color:var(--bt);box-shadow:0 6px 18px rgba(0,0,0,.4)}
 .thp{display:none;position:absolute;right:0;bottom:56px;background:var(--card);border:2px solid var(--ln);border-radius:18px;padding:8px;min-width:170px;box-shadow:0 14px 34px rgba(0,0,0,.4)}#thm.open .thp{display:block}
 .thp button{all:unset;cursor:pointer;display:flex;gap:8px;align-items:center;width:100%;padding:9px 10px;border-radius:12px;font-weight:700;color:var(--ink);box-sizing:border-box}.thp button:hover,.thp button.on{background:var(--bg)}.thp button.on{outline:2px solid var(--b)}
-footer#cr{display:block;margin-top:40px;padding:0 0 80px;background:#0f172a;color:#cbd5e1;font:400 12px/1.7 Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;border-top:3px solid transparent;border-image:var(--sbo) 1}
-#cr .ft-top{all:unset;display:block;box-sizing:border-box;width:100%;padding:14px;text-align:center;cursor:pointer;background:#1e293b;color:#fff;font:600 13px Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}#cr .ft-top:hover{background:#334155}
-#cr .ft-in{max-width:880px;margin:0 auto;padding:36px 16px 24px;display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:28px}
-#cr .ft-brand b{display:block;font:800 18px Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:#fff;margin-bottom:8px}
-#cr h3{margin:0 0 10px;font:700 13px Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:#fff;letter-spacing:.02em}
-#cr .fl{all:unset;display:block;box-sizing:border-box;cursor:pointer;padding:4px 0;color:#cbd5e1;font:400 13px/1.5 Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}
-#cr a.fl{display:flex;align-items:center;gap:6px}
-#cr .fl:hover,#cr .fl:focus-visible{color:#fff;text-decoration:underline}#cr .fl:focus-visible,#cr .ft-top:focus-visible{outline:2px solid #fff;outline-offset:2px}
-#cr .ft-bot{max-width:880px;margin:0 auto;padding:18px 16px 0;border-top:1px solid #334155;text-align:center}#cr .ft-bot p{margin:0}
-@media(max-width:700px){#cr .ft-in{grid-template-columns:1fr 1fr}#cr .ft-brand{grid-column:1/-1}}
-</style></head><body><div id=fx></div><nav id="sb"></nav><main id="app"></main><footer id=cr><button class=ft-top onclick="scrollTo({top:0,behavior:'smooth'})">Kembali ke atas</button><div class=ft-in><div class=ft-brand><b>Math Lab 7</b><span>Platform Eksplorasi Matematika untuk siswa SMP Kelas 7.</span></div><nav class=ft-col aria-label="Belajar"><h3>Belajar</h3><button class=fl onclick="go('home')">Beranda</button><button class=fl onclick="go('ulg')">Ulangan</button><button class=fl onclick="go('prog')">Progress</button></nav><nav class=ft-col aria-label="Materi Kelas 7"><h3>Materi Kelas 7</h3><button class=fl onclick="go('kelas',1)">Bab 1 · Bilangan Bulat dan Pecahan</button><button class=fl onclick="go('kelas',2)">Bab 2 · Bilangan Rasional</button><button class=fl onclick="go('kelas',3)">Bab 3 · Rasio dan Perbandingan</button><button class=fl onclick="go('kelas',4)">Bab 4 · Himpunan (Pengayaan)</button><button class=fl onclick="go('kelas',5)">Bab 5 · Bentuk Aljabar</button><button class=fl onclick="go('kelas',6)">Bab 6 · Kesebangunan</button><button class=fl onclick="go('kelas',7)">Bab 7 · Data dan Diagram</button></nav><nav class=ft-col aria-label="Pengembang"><h3>Pengembang</h3><a class=fl href="https://github.com/Yusril852" target=_blank rel=noopener><svg viewBox="0 0 16 16" width=14 height=14 fill=currentColor aria-hidden=true><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a><button class=fl onclick="go('guru')">Dashboard Guru</button></nav></div><div class=ft-bot><p>© <span id=yr>2026</span> Math Lab 7 | Platform Eksplorasi Matematika.<br>Sistem &amp; Modul oleh Yusril Ainul Yakin, S.Pd., Gr.</p></div></footer><div id=thm></div>
+footer#cr{display:block;position:relative;z-index:1;margin-top:40px;padding:28px 16px 80px;background:#0f172a;color:#cbd5e1;text-align:center;font:400 12px/1.7 Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;border-top:3px solid transparent;border-image:var(--sbo) 1}
+#cr p{margin:0}
+#cr a{display:inline-flex;align-items:center;gap:6px;margin-top:6px;color:inherit;text-decoration:none;font-weight:600}#cr a:hover,#cr a:focus-visible{color:#fff;text-decoration:underline}
+</style></head><body><div id=fx></div><nav id="sb"></nav><main id="app"></main><footer id=cr><p>© <span id=yr>2026</span> Math Lab 7 | Platform Eksplorasi Matematika.<br>Sistem &amp; Modul oleh Yusril Ainul Yakin, S.Pd., Gr.</p><a href="https://github.com/Yusril852" target=_blank rel=noopener aria-label="GitHub Yusril852"><svg viewBox="0 0 16 16" width=14 height=14 fill=currentColor aria-hidden=true><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Yusril852</a></footer><div id=thm></div>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
