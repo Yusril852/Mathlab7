@@ -196,6 +196,10 @@ footer#cr{display:block;position:relative;z-index:1;margin-top:40px;padding:28px
 #cr p{margin:0}
 #cr a{display:inline-flex;align-items:center;gap:6px;margin-top:6px;color:inherit;text-decoration:none;font-weight:600}#cr a:hover,#cr a:focus-visible{color:#fff;text-decoration:underline}
 
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .14em;font-size:.92em;line-height:1.15;text-indent:0;white-space:nowrap}
+.fr>span:first-child{border-bottom:.09em solid currentColor;padding:0 .2em .05em}
+.fr>span:last-child{padding:.05em .2em 0}
+
 main.mw{max-width:1180px;padding-top:12px}
 .mfr{display:block;width:100%;height:calc(100dvh - 120px);min-height:420px;border:1px solid var(--ln);border-radius:18px;background:var(--bg)}
 .btn.mdl{margin-left:6px}
@@ -484,6 +488,11 @@ tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surf2) 40%,var(--
 .nlr div{background:var(--hero-ink);color:var(--hero);padding:10px 12px}
 .nlr small{display:block;font:700 14px/1.2 var(--body)}
 .nlr b{font:800 26px/1.25 var(--head)}
+.steps li{display:block;position:relative;padding:14px 18px 14px 64px;min-height:64px}
+.steps li::before{position:absolute;left:14px;top:14px}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .14em;font-size:.92em;line-height:1.15;text-indent:0;white-space:nowrap}
+.fr>span:first-child{border-bottom:.09em solid currentColor;padding:0 .2em .05em}
+.fr>span:last-child{padding:.05em .2em 0}
 @media (max-width:640px){.mbar{display:none}.tgl{padding:0 10px}}
 .tgl{display:none!important}
 </style>
@@ -743,6 +752,25 @@ const draw=()=>{
     .map(r=>'<div><small>'+r[0]+'</small><b>'+r[1]+'</b></div>').join('');
 };
 ra.oninput=rb.oninput=draw;draw();
+
+/* Pecahan ditampilkan bersusun: 1/3 menjadi pembilang di atas penyebut */
+const FR2=/(?<![\w.,/])(?<!soal )(?<!Soal )(?:(\d+)\/(\d+)(?![\d/]|[.,]\d)|([a-d])\/([a-d])(?![\w/])|([A-Z]{2})\/([A-Z]{2})(?![\w/]))(?!\s*(?:benar|soal))/g,FR1=new RegExp(FR2.source);
+function frac(root,skip){
+  skip='script,style,textarea,input,title,.fr'+(skip?','+skip:'');
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),list=[];
+  for(let n;n=w.nextNode();)if(FR1.test(n.nodeValue)&&!(n.parentElement&&n.parentElement.closest(skip)))list.push(n);
+  list.forEach(n=>{
+    const t=n.nodeValue,f=document.createDocumentFragment();let i=0;
+    for(const m of t.matchAll(FR2)){
+      const a=m[1]||m[3]||m[5],b=m[2]||m[4]||m[6],s=document.createElement('span');
+      s.className='fr';s.setAttribute('role','math');s.setAttribute('aria-label',a+' per '+b);
+      s.innerHTML='<span aria-hidden="true">'+a+'</span><span aria-hidden="true">'+b+'</span>';
+      f.append(t.slice(i,m.index),s);i=m.index+m[0].length;
+    }
+    f.append(t.slice(i));n.replaceWith(f);
+  });
+}
+frac(document.body);
 })();
 <\/script>
 </body></html></script>
@@ -1152,6 +1180,26 @@ function stEnd(){if(!ST)return;const s=ST;ST=null;if(!S||s.el<5)return;S.st=S.st
 function stGo(L){const g=ST.g,i=ST.i;if(!L){stEnd();return go('kelas',g)}start(g,i,L)}
 W.study=()=>{if(!ST)return W.kelas();const t=T[ST.g][ST.i];return`<div class="row sp"><button class="btn s" onclick=stGo(0)>← Kembali</button><b id=stm>⏱️ ${fdur(ST.el)}</b></div><h2>📖 Belajar: ${esc(t.n)}</h2><div class=mu>Bab ${ST.g} · ${esc(CH[ST.g-1])}</div><div class=card><h3 style="margin-top:0">Ringkasan materi</h3><p>${t.m}</p></div><h2>Contoh soal & pembahasan</h2>${ST.ex.map((q,k)=>`<div class=card><b>${LN[k+1]}</b>${q.g?`<div class=gfx>${q.g}</div>`:''}<div class=q>${q.q}</div><details><summary>Lihat jawaban & pembahasan</summary><p>Jawaban: <b>${q.a}</b></p><p>💡 ${q.e}</p></details></div>`).join('')}<div class=card style="text-align:center"><b>Sudah siap latihan?</b><div class=row style="justify-content:center;margin:10px 0">${[1,2,3].map(L=>`<button class="btn lvb l${L}" onclick="stGo(${L})">${LN[L]}<small>25 soal</small></button>`).join('')}</div><button class="btn s" onclick="modGo(ST.g,ST.i)">📘 Buka modul sub-bab ini</button> <button class="btn s" onclick=stGo(0)>Selesai belajar</button></div>`};
 
+
+/* Pecahan ditampilkan bersusun: 1/3 menjadi pembilang di atas penyebut */
+const FR2=/(?<![\w.,/])(?<!soal )(?<!Soal )(?:(\d+)\/(\d+)(?![\d/]|[.,]\d)|([a-d])\/([a-d])(?![\w/])|([A-Z]{2})\/([A-Z]{2})(?![\w/]))(?!\s*(?:benar|soal))/g,FR1=new RegExp(FR2.source);
+function frac(root,skip){
+  skip='script,style,textarea,input,title,.fr'+(skip?','+skip:'');
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),list=[];
+  for(let n;n=w.nextNode();)if(FR1.test(n.nodeValue)&&!(n.parentElement&&n.parentElement.closest(skip)))list.push(n);
+  list.forEach(n=>{
+    const t=n.nodeValue,f=document.createDocumentFragment();let i=0;
+    for(const m of t.matchAll(FR2)){
+      const a=m[1]||m[3]||m[5],b=m[2]||m[4]||m[6],s=document.createElement('span');
+      s.className='fr';s.setAttribute('role','math');s.setAttribute('aria-label',a+' per '+b);
+      s.innerHTML='<span aria-hidden="true">'+a+'</span><span aria-hidden="true">'+b+'</span>';
+      f.append(t.slice(i,m.index),s);i=m.index+m[0].length;
+    }
+    f.append(t.slice(i));n.replaceWith(f);
+  });
+}
+
+{let q=0;new MutationObserver(()=>{if(q)return;q=requestAnimationFrame(()=>{q=0;frac($('#app'),'.big,.chip,table,.bar,summary,.btn,.lvb,.lg')})}).observe(document.getElementById('app'),{childList:true,subtree:true})}
 /* ===== Modul belajar (Modul MathLab 7) disematkan lewat iframe ===== */
 const MODSRC=document.getElementById('modsrc').textContent.replace(/<\\\/script/g,'</script');
 let MODURL=null,MODKEY_='',MH='';
