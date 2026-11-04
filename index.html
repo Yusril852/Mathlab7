@@ -488,6 +488,24 @@ tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surf2) 40%,var(--
 .nlr div{background:var(--hero-ink);color:var(--hero);padding:10px 12px}
 .nlr small{display:block;font:700 14px/1.2 var(--body)}
 .nlr b{font:800 26px/1.25 var(--head)}
+.vn{margin:22px 0 26px;max-width:760px;padding:20px 22px 22px;background:var(--surf);border-left:8px solid var(--c);color:var(--ink)}
+.vn h2{font-weight:800;font-size:24px;line-height:1.1;margin:0 0 16px}
+.vnc{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.vnc label{display:grid;gap:6px;font-weight:700}
+.vnc input{width:100%;height:28px;margin:0;accent-color:var(--c)}
+.vnt{display:block;width:100%;height:auto;margin:14px 0 6px}
+.vnt .vs{fill:none;stroke:var(--ink);stroke-width:2}
+.vnt .va{fill:color-mix(in srgb,var(--c) 62%,transparent);stroke:var(--ink);stroke-width:2}
+.vnt .vb{fill:color-mix(in srgb,var(--c3) 62%,transparent);stroke:var(--ink);stroke-width:2}
+.vnt text{fill:var(--ink);font:800 20px var(--head);text-anchor:middle}
+.vnt .vt{font-size:17px}.vnt .vo{font:700 14px var(--body);text-anchor:end}
+.vnf{margin:6px 0 0;font-weight:700}
+.vnr{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:12px}
+.vnr div{background:var(--hero-ink);color:var(--hero);padding:10px 12px}
+.vnr small{display:block;font:700 14px/1.2 var(--body)}
+.vnr b{font:800 26px/1.25 var(--head)}
+@media(max-width:520px){.vnc{grid-template-columns:1fr}}
+
 .steps li{display:block;position:relative;padding:14px 18px 14px 64px;min-height:64px}
 .steps li::before{position:absolute;left:14px;top:14px}
 .fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .14em;font-size:.92em;line-height:1.15;text-indent:0;white-space:nowrap}
@@ -579,6 +597,7 @@ tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surf2) 40%,var(--
 <p class="sum"><strong>Ringkasan.</strong> Kecepatan = jarak ÷ waktu. Debit = volume ÷ waktu. km/jam × 5/18 menjadi m/s. m/s × 3,6 menjadi km/jam.</p><div class="prog"><div class="segs"><i class="seg e1"></i><i class="seg e2"></i><i class="seg e3"></i><i class="seg e4"></i><i class="seg e5"></i><i class="seg e6"></i><i class="seg e7"></i><i class="seg e8"></i><i class="seg e9"></i></div><p class="cnt">Sudah paham <b class="num"></b> dari 9 contoh.</p><p class="alldone">Semua contoh sudah kamu pahami. Waktunya latihan di MathLab 7.</p><a class="nextlnk" href="#bab-4">Lanjut ke Bab 4</a></div></div></section></article><article class="panel" id="bab-4" style="--c:var(--c4)"><header class="chead"><div class="wrap"><h2>Bab 4. Himpunan</h2><div class="intro"><p>Bab ini membahas pengelompokan bilangan dan benda ke dalam himpunan, lalu menggambarkannya dengan diagram Venn. Sub-bab: mengklasifikasi himpunan bilangan real dengan diagram Venn.</p></div><p class="meta">1 sub-bab dan 9 contoh yang bisa kamu centang satu per satu.</p></div></header><section class="sec" id="bab-4-1"><div class="wrap"><h3 class="st">4.1 Himpunan Bilangan Real dan Diagram Venn</h3><p class="idea"><strong>Ide pokok.</strong> Himpunan adalah kumpulan benda atau bilangan yang jelas anggotanya. Diagram Venn membantu kita melihat bagian yang sama dan bagian yang berbeda antar himpunan.</p>
 <h4 class="lab">Penjelasan: istilah dasar</h4>
 <ul class="pts"><li><strong>Himpunan</strong> ditulis dengan kurung kurawal, misalnya A = {1, 2, 3}. Isinya disebut <strong>anggota</strong>.</li><li><strong>n(A)</strong> adalah banyak anggota himpunan A. Untuk A = {1, 2, 3}, n(A) = 3.</li><li><strong>Irisan</strong> A ∩ B: anggota yang ada di A dan juga di B.</li><li><strong>Gabungan</strong> A ∪ B: anggota yang ada di A atau B (anggota yang sama ditulis sekali).</li><li><strong>Himpunan bagian</strong>: B adalah himpunan bagian dari A jika semua anggota B ada di A. Himpunan dengan n anggota punya 2ⁿ himpunan bagian.</li><li>Rumus penting: n(A ∪ B) = n(A) + n(B) − n(A ∩ B). Dikurangi irisan karena bagian yang sama terhitung dua kali.</li></ul>
+<div class="vn" role="group" aria-label="Diagram Venn interaktif"><h2>Geser n(A), n(B), dan irisannya</h2><div class="vnc"><label>n(A) = <output id="va_o"></output><input id="va" type="range" min="0" max="30" value="14"></label><label>n(B) = <output id="vb_o"></output><input id="vb" type="range" min="0" max="30" value="10"></label><label>n(A ∩ B) = <output id="vi_o"></output><input id="vi" type="range" min="0" max="10" value="4"></label><label>n(S), semesta = <output id="vs_o"></output><input id="vs" type="range" min="0" max="60" value="30"></label></div><svg class="vnt" viewBox="0 0 400 240" role="img" aria-label="Diagram Venn dua himpunan"></svg><p class="vnf" aria-live="polite"></p><div class="vnr" aria-live="polite"></div></div>
 <h4 class="lab">Penjelasan: jenis bilangan</h4>
 <div class="tw"><table><thead><tr><th>Himpunan</th><th>Isi</th><th>Contoh</th></tr></thead><tbody><tr><td>Bilangan asli</td><td>1, 2, 3, ...</td><td>7, 25</td></tr><tr><td>Bilangan cacah</td><td>0, 1, 2, ...</td><td>0, 12</td></tr><tr><td>Bilangan bulat</td><td>..., −2, −1, 0, 1, 2, ...</td><td>−9, 0, 4</td></tr><tr><td>Bilangan rasional</td><td>bisa ditulis a/b, b ≠ 0</td><td>3/4, −2/5, 0,75</td></tr><tr><td>Bilangan irasional</td><td>desimalnya tidak berakhir dan tidak berulang</td><td>√2, √3, π</td></tr></tbody></table></div>
 <p>Urutan "kamar"-nya: asli ada di dalam cacah, cacah di dalam bulat, bulat di dalam rasional. Rasional dan irasional digabung menjadi bilangan real. Akar dari bilangan kuadrat sempurna (misalnya √9 = 3) adalah rasional, sedangkan akar bukan kuadrat sempurna (misalnya √2) adalah irasional.</p>
@@ -752,6 +771,29 @@ const draw=()=>{
     .map(r=>'<div><small>'+r[0]+'</small><b>'+r[1]+'</b></div>').join('');
 };
 ra.oninput=rb.oninput=draw;draw();
+
+/* Diagram Venn di Bab 4 */
+(()=>{const va=$('#va');if(!va)return;
+const vb=$('#vb'),vi=$('#vi'),vs=$('#vs'),svg=$('.vnt'),res=$('.vnr'),ft=$('.vnf'),pw=n=>n<=16?(Math.pow(2,n)).toLocaleString('id-ID'):'2^'+n;
+const draw=()=>{
+  const a=+va.value,b=+vb.value,m=Math.min(a,b);vi.max=m;const i=Math.min(+vi.value,m);vi.value=i;
+  const u=a+b-i;vs.min=u;const S=Math.max(+vs.value,u);vs.value=S;
+  $('#va_o').textContent=a;$('#vb_o').textContent=b;$('#vi_o').textContent=i;$('#vs_o').textContent=S;
+  const rA=30+55*Math.sqrt(a/30),rB=30+55*Math.sqrt(b/30),t=m?i/m:0,d=(rA+rB+6)*(1-t)+Math.abs(rA-rB)*t,
+    xa=(400-(rA+d+rB))/2+rA,xb=xa+d,Ll=xa-rA,Lr=xa+rA,Rl=xb-rB,Rr=xb+rB,
+    lab=(l,r,n)=>r-l>=14?'<text x="'+(l+r)/2+'" y="127">'+n+'</text>':'';
+  svg.innerHTML='<rect class="vs" x="8" y="8" width="384" height="224" rx="6"></rect>'
+    +'<circle class="va" cx="'+xa+'" cy="120" r="'+rA+'"></circle><circle class="vb" cx="'+xb+'" cy="120" r="'+rB+'"></circle>'
+    +lab(Ll,Math.min(Rl,Lr),a-i)+lab(Math.max(Ll,Rl),Math.min(Lr,Rr),i)+lab(Math.max(Lr,Rl),Rr,b-i)
+    +'<text class="vt" x="'+(xa-rA*0.5)+'" y="'+(120-rA-6)+'">A</text><text class="vt" x="'+(xb+rB*0.5)+'" y="'+(120-rB-6)+'">B</text>'
+    +'<text class="vo" x="384" y="226">di luar: '+(S-u)+'</text>';
+  const rel=(!a||!b)?'Ada himpunan kosong':i==0?'Saling lepas':(a==b&&i==a)?'A = B':i==b?'B \u2282 A':i==a?'A \u2282 B':'Berpotongan';
+  ft.textContent='n(A \u222a B) = n(A) + n(B) \u2212 n(A \u2229 B) = '+a+' + '+b+' \u2212 '+i+' = '+u;
+  res.innerHTML=[['n(A \u222a B)',u],['n(A \u2229 B)',i],['Hanya A',a-i],['Hanya B',b-i],['Di luar A dan B',S-u],['Hubungan',rel,1],['Himpunan bagian A',pw(a)]]
+    .map(r=>'<div><small>'+r[0]+'</small><b'+(r[2]?' style="font-size:19px"':'')+'>'+r[1]+'</b></div>').join('');
+};
+[va,vb,vi,vs].forEach(e=>e.oninput=draw);draw();
+})();
 
 /* Pecahan ditampilkan bersusun: 1/3 menjadi pembilang di atas penyebut */
 const FR2=/(?<![\w.,/])(?<!soal )(?<!Soal )(?:(\d+)\/(\d+)(?![\d/]|[.,]\d)|([a-d])\/([a-d])(?![\w/])|([A-Z]{2})\/([A-Z]{2})(?![\w/]))(?!\s*(?:benar|soal))/g,FR1=new RegExp(FR2.source);
